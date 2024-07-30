@@ -4,7 +4,13 @@
 # Example:
 ############
 repositories:
-  examples:
+  ros_components_description:
     type: git
-    url: https://github.com/ros2/examples.git
-    version: humble
+    url: https://github.com/husarion/ros_components_description.git
+    version: a6473588eee97feaee3481f9eba4f746b1f4476e # New features can break some functions
+
+  m-explore-ros2:
+    type: git
+    url: https://github.com/robo-friends/m-explore-ros2.git
+    version: main
+ 
