@@ -26,8 +26,13 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && apt-get install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y python3-pip
+
+# RUN apt-get update && apt-get upgrade -y
+RUN apt-get update \
+    && apt-get install -y python3-pip \
+    && apt install -y python3-colcon* \
+    && pip3 install setuptools==58.2.0
+    
 ENV SHELL /bin/bash
 
 # Install ROS dependencies
@@ -69,10 +74,10 @@ RUN apt-get update \
 	ros-$ROS_DISTRO-ign-ros2-control \
 	ros-$ROS_DISTRO-robot-localization \
 	ros-${ROS_DISTRO}-ros-ign-bridge \
-	ros-${ROS_DISTRO}-rmw-cyclonedds-cpp\
-	&& apt-get clean -q -y \
-	&& apt-get autoremove -q -y \
-	&& rm -rf /var/lib/apt/lists/*
+	ros-${ROS_DISTRO}-rmw-cyclonedds-cpp
+	# && apt-get clean -q -y \
+	# && apt-get autoremove -q -y \
+	# && rm -rf /var/lib/apt/lists/*
 
 RUN echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> /home/ros/.bashrc \
     && echo "source /opt/ros/humble/setup.bash" >> /home/ros/.bashrc 

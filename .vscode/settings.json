@@ -37,13 +37,13 @@
         "**/log": true
     },
     "cSpell.words": [
-        "RTPS",
         "athackst",
         "autopep",
         "cmake",
         "cppcheck",
         "cpplint",
         "DCMAKE",
+        "decel",
         "deque",
         "devcontainer",
         "ints",
@@ -55,8 +55,12 @@
         "rosdep",
         "rosdistro",
         "rosidl",
+        "rplidar",
         "RTPS",
+        "slamtec",
         "uncrustify",
+        "voxel",
+        "vtheta",
         "Wextra",
         "Wpedantic",
         "xmllint"
