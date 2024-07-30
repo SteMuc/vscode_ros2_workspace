@@ -2,3 +2,7 @@
 	path = src/differential_drive_robot
 	url = https://github.com/SteMuc/differential_drive_robot.git
 	branch = master
+[submodule "src/husarion_gz_worlds"]
+	path = src/husarion_gz_worlds
+	url = https://github.com/SteMuc/husarion_gz_worlds.git
+	branch = main
