@@ -40,6 +40,7 @@ RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 	ros-dev-tools \
 	stm32flash \
+    xterm \
 	libeigen3-dev \
     libignition-gazebo6-dev \
     libpoco-dev \
@@ -74,7 +75,7 @@ RUN apt-get update \
 	ros-$ROS_DISTRO-ign-ros2-control \
 	ros-$ROS_DISTRO-robot-localization \
 	ros-${ROS_DISTRO}-ros-ign-bridge \
-	ros-${ROS_DISTRO}-rmw-cyclonedds-cpp
+	ros-${ROS_DISTRO}-rmw-cyclonedds-cpp 
 	# && apt-get clean -q -y \
 	# && apt-get autoremove -q -y \
 	# && rm -rf /var/lib/apt/lists/*
