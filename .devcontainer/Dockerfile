@@ -31,6 +31,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 RUN apt-get update \
     && apt-get install -y python3-pip \
     && apt install -y python3-colcon* \
+    && apt install python3-transforms3d \
     && pip3 install setuptools==58.2.0
     
 ENV SHELL /bin/bash
@@ -75,7 +76,9 @@ RUN apt-get update \
 	ros-$ROS_DISTRO-ign-ros2-control \
 	ros-$ROS_DISTRO-robot-localization \
 	ros-${ROS_DISTRO}-ros-ign-bridge \
-	ros-${ROS_DISTRO}-rmw-cyclonedds-cpp 
+	ros-${ROS_DISTRO}-rmw-cyclonedds-cpp \
+    ros-${ROS_DISTRO}-nav2-simple-commander \
+    ros-${ROS_DISTRO}-tf-transformations
 	# && apt-get clean -q -y \
 	# && apt-get autoremove -q -y \
 	# && rm -rf /var/lib/apt/lists/*
